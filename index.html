@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rumi Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: rgb(0, 0, 33);
+      color: white;
+      font-family: "Poppins", sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      background-color: rgb(20, 0, 33);
+      padding: 0 50px;
+    }
+
+    nav ul {
+      display: flex;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: brown;
+      font-size: 17px;
+    }
+
+    .left {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .first {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 120px;
+      margin-bottom: 120px;
+      padding: 0 40px;
+    }
+
+    .first > div {
+      width: 400px;
+    }
+
+    .leftsection {
+      font-size: 32px;
+    }
+
+    .rightsection img {
+      width: 320px;
+    }
+
+    .purple {
+      color: rgb(125, 43, 226);
+    }
+
+    .about, .education, .contact {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 48px;
+      color: #f0f0f0;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      color: #fefefe;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .stat {
+      background: linear-gradient(135deg, #68507b, #ffffff);
+      border-radius: 10px;
+      text-align: center;
+      padding: 24px;
+      transition: 0.3s;
+    }
+
+    .stat h3 {
+      font-size: 36px;
+      color: #040410;
+    }
+
+    .stat p {
+      color: #385f60;
+      font-weight: 600;
+    }
+
+    .stat:hover {
+      background: linear-gradient(135deg, #d98be6, #ffffff);
+      transform: translateY(-2px);
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(114, 84, 84, 0.1);
+    }
+
+    .education-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .education-details {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .edu-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 24px;
+      border-radius: 10px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .edu-box h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .edu-box:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .education-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #aaa;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+      color: #6366f1;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: #6366f1;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      background: #4f46e5;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      background: #f8fafc;
+      padding: 32px;
+      border-radius: 15px;
+      border: 2px solid black;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #6366f1;
+    }
+
+    .btn {
+      background-color: #6366f1;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #4f46e5;
+    }
+
+    .footer {
+      background-color: #1f2937;
+      color: #ccc;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .first {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-content,
+      .education-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+
+      .first > div {
+        width: 100%;
+      }
+
+      nav {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .rightsection img {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Rumii</div>
+      <div class="right">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="first">
+      <div class="leftsection">
+        Hi, I am <span class="purple">Rumii</span>
+        <div>and I am a passionate</div>
+        <div>Web Developer</div>
+      </div>
+      <div class="rightsection">
+        <img src="images.jpeg" alt="profile image" />
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm Rumi, a CSE student at SUST. I’m passionate about Machine Learning and AI, and I enjoy building smart systems and responsive websites.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <h3>5</h3>
+                <p>Projects Completed</p>
+              </div>
+              <div class="stat">
+                <h3>30+</h3>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="about.jpg" alt="About image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="education">
+      <div class="container">
+        <h2 class="section-title">My Education</h2>
+        <div class="education-content">
+          <div class="education-details">
+            <div class="edu-box">
+              <h3>PSC - JSC - SSC</h3>
+              <p>I completed my primary and secondary education with dedication. I developed interest in science and technology during these years.</p>
+            </div>
+            <div class="edu-box">
+              <h3>HSC</h3>
+              <p>I studied Physics, Chemistry, and Math, and took part in Olympiads and ICT fairs.</p>
+            </div>
+            <div class="edu-box">
+              <h3>CSE at SUST</h3>
+              <p>Currently, I'm a 3rd-year CSE student at SUST. I'm passionate about Machine Learning, AI, and software development.</p>
+            </div>
+          </div>
+          <div class="education-image">
+            <img src="download.jpeg" alt="Education Image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Have an idea? Let’s make it real! I’m always excited to connect with passionate people and work on meaningful projects. Don’t hesitate to reach out — let’s talk!</p>
+            <div class="contact-details">
+              <div class="contact-item"><i class="fas fa-envelope"></i> khadizaaktherrumi@gmail.com</div>
+              <div class="contact-item"><i class="fas fa-phone"></i> 01877663882</div>
+              <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Bangladesh</div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/khadiza-akther-rumi-302b5632a/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/2021331010" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="https://www.facebook.com/khadiza.akter.rumi.2024" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/rkhadizaakter?igsh=dHo5YnNpNWw2OTJ4" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group"><input type="text" placeholder="Your Name" required /></div>
+            <div class="form-group"><input type="email" placeholder="Your Email" required /></div>
+            <div class="form-group"><input type="text" placeholder="Subject" required /></div>
+            <div class="form-group"><textarea rows="5" placeholder="Your Message" required></textarea></div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Khadiza Akther Rumi<br />All rights reserved.</p>
+  </footer>
+</body>
+</html>
