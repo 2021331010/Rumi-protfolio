@@ -22,7 +22,7 @@
       background-color: rgb(13, 0, 33);
       padding: 0 50px;
     }
-
+    
     nav ul {
       display: flex;
     }
@@ -47,7 +47,26 @@
       font-size: 24px;
       font-weight: 700;
     }
-
+     .rumi{
+        width: 100%;
+        height: 100%;
+        display: flex;
+      
+    }
+     .rumi:hover{
+        color: brown;
+     }
+    .left{
+        margin-top: 20px;
+       
+    }
+     .left-logo img{
+        height: 100%;
+        width: 100%;
+        border: 1px solid brown;
+        margin-top: 5px;
+     }
+    
     .first {
       display: flex;
       justify-content: space-around;
@@ -55,6 +74,7 @@
       margin-top: 120px;
       margin-bottom: 120px;
       padding: 0 40px;
+    
     }
 
     .first > div {
